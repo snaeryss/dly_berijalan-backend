@@ -1,0 +1,613 @@
+{
+	"info": {
+		"_postman_id": "53ab60a6-8efd-4377-91d0-3c0c54221a1b",
+		"name": "API - Bootcamp Berijalan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42369746",
+		"_collection_link": "https://a-0844.postman.co/workspace/Project-Prak.-TCC~90736d7a-0e74-4d28-a66d-4efb2e0d74f4/collection/42369746-53ab60a6-8efd-4377-91d0-3c0c54221a1b?action=share&source=collection_link&creator=42369746"
+	},
+	"item": [
+		{
+			"name": "Register Berhasil",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ageng.tes\",\r\n    \"password\": \"tes123\",\r\n    \"email\": \"ageng.tes@email.com\",\r\n    \"name\": \"Ageng Tester\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Hasil Register Berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ageng.tes\",\r\n    \"password\": \"tes123\",\r\n    \"email\": \"ageng.tes@email.com\",\r\n    \"name\": \"Ageng Tester\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "393"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"189-nf5lD7qt+f4eThzKz5bv+kD/lKo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 23:14:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Register success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZ2VuZy50ZXMiLCJlbWFpbCI6ImFnZW5nLnRlc0BlbWFpbC5jb20iLCJuYW1lIjoiQWdlbmcgVGVzdGVyIiwiaWF0IjoxNzU3NzE4ODQ3LCJleHAiOjE3NTc3MjI0NDd9.R811KqdaS3cGvPugj8N0oh_Pdj0ApM73D8I3qFZFI9s\",\n        \"admin\": {\n            \"id\": 1,\n            \"username\": \"ageng.tes\",\n            \"email\": \"ageng.tes@email.com\",\n            \"name\": \"Ageng Tester\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login Berhasil",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ageng.tes\",\r\n    \"password\": \"tes123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Hasil Login Berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ageng.tes\",\r\n    \"password\": \"tes123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "393"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"189-BUqccRP4FMbazEfOkP6FwDeGF44\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 23:20:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZ2VuZy50ZXMiLCJlbWFpbCI6ImFnZW5nLnRlc0BlbWFpbC5jb20iLCJuYW1lIjoiQWdlbmcgVGVzdGVyIiwiaWF0IjoxNzU3NzE5MjQxLCJleHAiOjE3NTc3MjI4NDF9.qa2mWy2_PjHcRoC90MiPSLWvv4g8rVtTtTQV30UBrxc\",\n        \"admin\": {\n            \"id\": 1,\n            \"username\": \"ageng.tes\",\n            \"email\": \"ageng.tes@email.com\",\n            \"name\": \"Ageng Tester\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login Gagal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ageng.tes\",\r\n    \"password\": \"passwordSalah\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Hasil Login Gagal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ageng.tes\",\r\n    \"password\": \"passwordSalah\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a-LHsNLQHRqVLPOq0wdHtzQtPE8sE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 23:22:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Invalid credentials\",\n    \"error\": {\n        \"message\": \"Invalid credentials\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Berhasil",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZ2VuZy50ZXMiLCJlbWFpbCI6ImFnZW5nLnRlc0BlbWFpbC5jb20iLCJuYW1lIjoiQWdlbmcgVGVzdGVyIiwiaWF0IjoxNzU3NzE5NjQxLCJleHAiOjE3NTc3MjMyNDF9.dsZgvRfy82RntDr6rpe38y56tyrWcsvo6Dq_Juj9voc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Ageng.Baru\",\r\n    \"password\": \"PasswordBaru\",\r\n    \"email\": \"ageng.baru@gmail.com\",\r\n    \"name\": \"Ageng Baru\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Hasil Update Berhasil",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Ageng.Baru\",\r\n    \"password\": \"PasswordBaru\",\r\n    \"email\": \"ageng.baru@gmail.com\",\r\n    \"name\": \"Ageng Baru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "143"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8f-0yH7rjPKM4E2NsVV0hBCxkL/9TQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 23:30:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Update success\",\n    \"data\": {\n        \"admin\": {\n            \"id\": 1,\n            \"username\": \"Ageng.Baru\",\n            \"email\": \"ageng.baru@gmail.com\",\n            \"name\": \"Ageng Baru\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Berhasil",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhZ2VuZy5rZWR1YSIsImVtYWlsIjoiYWdlbmcyLnRlc0BlbWFpbC5jb20iLCJuYW1lIjoiQWdlbmcgVGVzdGVycyIsImlhdCI6MTc1NzcyMDE0OCwiZXhwIjoxNzU3NzIzNzQ4fQ.KCrGpp-uYX90VR6DobtmVBkBXztFOgDnac7xvmYg4Zo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Hasil Delete Berhasil",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "147"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"93-o28asQdVq6WWOp5GNDyPYfN6+h4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 23:36:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Delete success\",\n    \"data\": {\n        \"admin\": {\n            \"id\": 2,\n            \"username\": \"ageng.kedua\",\n            \"email\": \"ageng2.tes@email.com\",\n            \"name\": \"Ageng Testers\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Register Gagal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ageng.kedua\",\r\n    \"password\": \"test123\",\r\n    \"email\": \"ageng2.tes@email.com\",\r\n    \"name\": \"ageng\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Hasil Register Gagal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ageng.kedua\",\r\n    \"password\": \"test123\",\r\n    \"email\": \"ageng2.tes@email.com\",\r\n    \"name\": \"ageng\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"create"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "116"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"74-lU+pbjelDqyW/lKZUJcCCBip9bE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 12 Sep 2025 23:41:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Username or email already exists\",\n    \"error\": {\n        \"message\": \"Username or email already exists\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
