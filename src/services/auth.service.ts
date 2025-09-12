@@ -1,7 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
-import { IGlobalResponse, ILoginResponse } from "../interface/global.interface";
-import jwt, { SignOptions } from "jsonwebtoken";
+import { IGlobalResponse} from "../interface/global.interface";
+import { ILoginResponse } from "../interface/auth.interface";
+import { UGenerateToken } from "../utils/auth.utils"
+
 
 const prisma = new PrismaClient();
 
@@ -49,16 +51,6 @@ export const SLogin = async (
   };
 };
 
-interface JWTPayload {
-  id: number;
-  username: string;
-  email: string;
-  name: string;
-}
 
-function UGenerateToken(payload: JWTPayload): string {
-  const secretKey = process.env.JWT_SECRET_KEY!;
-  const expiresIn = process.env.JWT_EXPIRES_IN || "1h";
-  return jwt.sign(payload as object, secretKey, { expiresIn } as SignOptions);
 
-}
+
