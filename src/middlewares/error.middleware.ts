@@ -1,4 +1,6 @@
-import { NextFunction, Request, Response } from "express";
+import { 
+    NextFunction, Request, Response 
+} from "express";
 import { IGlobalResponse } from "../interface/global.interface";
 
 export const MErrorHandler = (

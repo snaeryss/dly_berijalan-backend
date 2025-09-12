@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { SLogin } from "../services/auth.service";
+import { SDelete, SLogin , SRegister, SUpdate } from "../services/auth.service";
 
 export const CLogin = async (
   req: Request,
@@ -15,3 +15,49 @@ export const CLogin = async (
     next(error);
   }
 };
+
+export const CRegister = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const { username, password, email, name } = req.body;
+    const result = await SRegister(username, password, email, name);
+
+    res.status(200).json(result);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const CUpdate = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const { username, password, email, name } = req.body;
+    const result = await SUpdate(Number(id), username, password, email, name);
+
+    res.status(200).json(result);
+  } catch (error) {
+    next(error);
+  }
+}
+
+export const CDelete = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const result = await SDelete(Number(id));
+
+    res.status(200).json(result);
+  } catch (error) {
+    next(error);
+  }
+}
