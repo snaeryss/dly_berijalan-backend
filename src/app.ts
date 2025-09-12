@@ -7,8 +7,8 @@ dotenv.config();
 
 const app = express();
 
+app.use(express.json());
 app.use("/api/v1/auth", authRouter);
-
 app.use(MErrorHandler)
 
 app.listen(3000, () => {

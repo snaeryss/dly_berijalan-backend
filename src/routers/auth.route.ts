@@ -15,7 +15,7 @@ router.post(
 router.put(
     "/:id", CUpdate
 );
-router.put(
+router.delete(
     "/:id", CDelete
 );
 

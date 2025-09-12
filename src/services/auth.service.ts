@@ -1,10 +1,15 @@
 import bcrypt from "bcrypt";
-
-import { IGlobalResponse} from "../interface/global.interface";
-import { IDeleteResponse, ILoginResponse, IRegisterResponse, IUpdateResponse } from "../interface/auth.interface";
-import { UGenerateToken } from "../utils/auth.utils"
-
+import { IGlobalResponse } from "../interface/global.interface";
+import {
+  IDeleteResponse,
+  ILoginResponse,
+  IRegisterResponse,
+  IUpdateResponse,
+} from "../interface/auth.interface";
+import { UGenerateToken } from "../utils/auth.utils";
+import { HttpError } from "../utils/http.error";
 import { PrismaClient } from "@prisma/client";
+
 const prisma = new PrismaClient();
 
 // Service Login
@@ -21,13 +26,13 @@ export const SLogin = async (
   });
 
   if (!admin) {
-    throw Error("Invalid credentials");
+    throw new HttpError(401, "Invalid credentials");
   }
 
   const isPasswordValid = await bcrypt.compare(password, admin.password);
 
   if (!isPasswordValid) {
-    throw Error("Invalid credentials");
+    throw new HttpError(401, "Invalid credentials");
   }
 
   const token = UGenerateToken({
@@ -59,6 +64,14 @@ export const SRegister = async (
   email: string,
   name: string
 ): Promise<IGlobalResponse<IRegisterResponse>> => {
+  const existingAdmin = await prisma.admin.findFirst({
+    where: { OR: [{ username }, { email }] },
+  });
+
+  if (existingAdmin) {
+    throw new HttpError(409, "Username or email already exists");
+  }
+
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const admin = await prisma.admin.create({
@@ -103,6 +116,11 @@ export const SUpdate = async (
   email: string,
   name: string
 ): Promise<IGlobalResponse<IUpdateResponse>> => {
+  const existingAdmin = await prisma.admin.findUnique({ where: { id } });
+  if (!existingAdmin) {
+    throw new HttpError(404, `Admin with ID ${id} not found`);
+  }
+
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const admin = await prisma.admin.update({
@@ -136,6 +154,10 @@ export const SUpdate = async (
 export const SDelete = async (
   id: number
 ): Promise<IGlobalResponse<IDeleteResponse>> => {
+  const existingAdmin = await prisma.admin.findUnique({ where: { id } });
+  if (!existingAdmin) {
+    throw new HttpError(404, `Admin with ID ${id} not found`);
+  }
   const admin = await prisma.admin.update({
     where: {
       id,
@@ -159,6 +181,3 @@ export const SDelete = async (
     },
   };
 };
-
-
-
