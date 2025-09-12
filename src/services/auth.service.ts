@@ -1,9 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import { IGlobalResponse, ILoginResponse } from "../interface/global.interface";
-// TODO: Ensure the following import path is correct and the file exists.
-// If the file does not exist, create '../interfaces/global.interface.ts' and export IGlobalResponse from it.
-
+import jwt, { SignOptions } from "jsonwebtoken";
 
 const prisma = new PrismaClient();
 
@@ -40,7 +38,7 @@ export const SLogin = async (
     status: true,
     message: "Login successful",
     data: {
-        token,
+      token,
       admin: {
         id: admin.id,
         username: admin.username,
@@ -51,8 +49,16 @@ export const SLogin = async (
   };
 };
 
-function UGenerateToken(arg0: { id: number; username: string; email: string; name: string; }): string {
-    // TODO: Replace with actual token generation logic (e.g., using JWT)
-    return "dummy-token";
+interface JWTPayload {
+  id: number;
+  username: string;
+  email: string;
+  name: string;
 }
 
+function UGenerateToken(payload: JWTPayload): string {
+  const secretKey = process.env.JWT_SECRET_KEY!;
+  const expiresIn = process.env.JWT_EXPIRES_IN || "1h";
+  return jwt.sign(payload as object, secretKey, { expiresIn } as SignOptions);
+
+}
