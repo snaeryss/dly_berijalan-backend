@@ -8,11 +8,8 @@ import {
 } from "../interface/auth.interface";
 import { UGenerateToken } from "../utils/auth.utils";
 import { HttpError } from "../utils/http.error";
-import { PrismaClient } from "@prisma/client";
+import prisma from "../configs/prisma.config";
 
-const prisma = new PrismaClient();
-
-// Service Loginjnk 
 export const SLogin = async (
   usernameOrEmail: string,
   password: string

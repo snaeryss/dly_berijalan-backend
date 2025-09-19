@@ -1,4 +1,4 @@
-import { NextFunction } from "express";
+import { NextFunction, Request, Response } from "express";
 import Joi from "joi";
 
 export const MValidate = (
@@ -20,4 +20,6 @@ export const MValidate = (
     next();
   };
 };
+
+
 
