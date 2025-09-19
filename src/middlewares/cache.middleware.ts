@@ -169,3 +169,15 @@ export const CachePresets = {
     // skipCacheIf: (req) => !req.admin,
   }),
 };
+
+export const invalidateCacheByPrefix = async (keyPrefix: string) => {
+    try {
+        const keys = await redisClient.keys(`${keyPrefix}:*`);
+        if (keys.length > 0) {
+            await redisClient.del(keys);
+            console.log(`Cache dengan prefix '${keyPrefix}' telah dihapus.`);
+        }
+    } catch (error) {
+        console.error(`Gagal menghapus cache dengan prefix '${keyPrefix}':`, error);
+    }
+};

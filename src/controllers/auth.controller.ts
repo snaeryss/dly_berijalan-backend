@@ -1,5 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import { SDelete, SGetAllAdmins, SLogin , SRegister, SUpdate } from "../services/auth.service";
+import { invalidateCacheByPrefix } from "../middlewares/cache.middleware"; 
+
+
 
 export const CLogin = async (
   req: Request,
@@ -9,6 +12,8 @@ export const CLogin = async (
   try {
     const { username, password } = req.body;
     const result = await SLogin(username, password);
+
+    invalidateCacheByPrefix('medium_cache'); 
 
     res.status(200).json(result);
   } catch (error) {
@@ -40,6 +45,8 @@ export const CUpdate = async (
     const { id } = req.params;
     const { username, password, email, name } = req.body;
     const result = await SUpdate(Number(id), username, password, email, name);
+
+    invalidateCacheByPrefix('medium_cache');
 
     res.status(200).json(result);
   } catch (error) {
