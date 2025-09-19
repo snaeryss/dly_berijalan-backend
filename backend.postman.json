@@ -596,6 +596,592 @@
 					"body": "{\n    \"status\": false,\n    \"message\": \"Username or email already exists\",\n    \"error\": {\n        \"message\": \"Username or email already exists\"\n    }\n}"
 				}
 			]
+		},
+		{
+			"name": "Create Counter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Loket Pelayanan A\",\r\n    \"maxQueue\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/counter/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"counter",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Loket Pelayanan A\",\r\n    \"maxQueue\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/counter/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"counter",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "254"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"fe-xtL6HT6lJCyCbuEgVKret3FysSY\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Sep 2025 17:05:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Counter created successfully\",\n    \"data\": {\n        \"counter\": {\n            \"id\": 1,\n            \"name\": \"Loket Pelayanan A\",\n            \"currentQueue\": 0,\n            \"maxQueue\": 100,\n            \"isActive\": true,\n            \"createdAt\": \"2025-09-19T17:05:14.185Z\",\n            \"updatedAt\": \"2025-09-19T17:05:14.185Z\",\n            \"deletedAt\": null\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Counters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/counter/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"counter",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/counter/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"counter",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "260"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"104-nb9gZZf4PVLJ1gEYRFW+9jzOuxw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Sep 2025 17:06:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Counters retrieved successfully\",\n    \"data\": {\n        \"counters\": [\n            {\n                \"id\": 1,\n                \"name\": \"Loket Pelayanan A\",\n                \"currentQueue\": 0,\n                \"maxQueue\": 100,\n                \"isActive\": true,\n                \"createdAt\": \"2025-09-19T17:05:14.185Z\",\n                \"updatedAt\": \"2025-09-19T17:05:14.185Z\",\n                \"deletedAt\": null\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Single Counter Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/counter/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"counter",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/counter/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"counter",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "256"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"100-ZumgrVas8a5FI9oCv6PWuAnvYl4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Sep 2025 17:07:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Counter retrieved successfully\",\n    \"data\": {\n        \"counter\": {\n            \"id\": 1,\n            \"name\": \"Loket Pelayanan A\",\n            \"currentQueue\": 0,\n            \"maxQueue\": 100,\n            \"isActive\": true,\n            \"createdAt\": \"2025-09-19T17:05:14.185Z\",\n            \"updatedAt\": \"2025-09-19T17:05:14.185Z\",\n            \"deletedAt\": null\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Counter",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Loket Prioritas\",\r\n    \"maxQueue\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/counter/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"counter",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/counter/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"counter",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "256"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"100-ZumgrVas8a5FI9oCv6PWuAnvYl4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Sep 2025 17:08:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Counter retrieved successfully\",\n    \"data\": {\n        \"counter\": {\n            \"id\": 1,\n            \"name\": \"Loket Pelayanan A\",\n            \"currentQueue\": 0,\n            \"maxQueue\": 100,\n            \"isActive\": true,\n            \"createdAt\": \"2025-09-19T17:05:14.185Z\",\n            \"updatedAt\": \"2025-09-19T17:05:14.185Z\",\n            \"deletedAt\": null\n        }\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Loket Prioritas\",\r\n    \"maxQueue\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/counter/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"counter",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "251"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"fb-M7aJWnshwNX9LW+jhFWs08l+GMM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Sep 2025 17:09:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Counter updated successfully\",\n    \"data\": {\n        \"counter\": {\n            \"id\": 1,\n            \"name\": \"Loket Prioritas\",\n            \"currentQueue\": 0,\n            \"maxQueue\": 50,\n            \"isActive\": true,\n            \"createdAt\": \"2025-09-19T17:05:14.185Z\",\n            \"updatedAt\": \"2025-09-19T17:09:37.057Z\",\n            \"deletedAt\": null\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Counter Status",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"inactive\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/counter/1/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"counter",
+						"1",
+						"status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"inactive\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/counter/1/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"counter",
+								"1",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "258"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"102-Clu+mXB/dwMzOzh3PNpZZn2giCg\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Sep 2025 17:15:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Counter status updated to inactive\",\n    \"data\": {\n        \"counter\": {\n            \"id\": 1,\n            \"name\": \"Loket Prioritas\",\n            \"currentQueue\": 0,\n            \"maxQueue\": 50,\n            \"isActive\": false,\n            \"createdAt\": \"2025-09-19T17:05:14.185Z\",\n            \"updatedAt\": \"2025-09-19T17:15:38.229Z\",\n            \"deletedAt\": null\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Counter",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/counter/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"counter",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/counter/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"counter",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44-PGpu+xdHAy9lanYKBCFEXGFVgpM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Sep 2025 17:16:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Counter deleted successfully\",\n    \"data\": null\n}"
+				}
+			]
 		}
 	],
 	"variable": [

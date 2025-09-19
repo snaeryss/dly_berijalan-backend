@@ -12,7 +12,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-// Service Login
+// Service Loginjnk 
 export const SLogin = async (
   usernameOrEmail: string,
   password: string
@@ -181,3 +181,29 @@ export const SDelete = async (
     },
   };
 };
+
+export const SGetAllAdmins = async (): Promise<IGlobalResponse> => {
+  const admins = await prisma.admin.findMany({
+    where: {
+      deletedAt: null,
+    },
+    select: {
+      id: true,
+      username: true,
+      email: true,
+      name: true,
+      isActive: true,
+      createdAt: true,
+      updatedAt: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
+  return {
+    status: true,
+    message: "Admins retrieved successfully",
+    data: admins,
+  };
+}
