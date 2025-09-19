@@ -7,8 +7,7 @@ import {
   IGetCounterResponse,
   IUpdateCounterResponse,
 } from "../interface/counter.interface";
-
-const prisma = new PrismaClient();
+import prisma from "../configs/prisma.config";
 
 export const SGetAllCounters = async (): Promise<IGlobalResponse<IGetAllCountersResponse>> => {
   const counters = await prisma.counter.findMany({

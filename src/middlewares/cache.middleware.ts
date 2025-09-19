@@ -181,3 +181,10 @@ export const invalidateCacheByPrefix = async (keyPrefix: string) => {
         console.error(`Gagal menghapus cache dengan prefix '${keyPrefix}':`, error);
     }
 };
+
+export const invalidateCounterCache = async (id?: number) => {
+    await invalidateCacheByPrefix('medium_cache');
+    if (id) {
+        await invalidateCacheByPrefix('short_cache');
+    }
+};
